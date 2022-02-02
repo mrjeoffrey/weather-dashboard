@@ -14,6 +14,11 @@
 // WHEN I click on a city in the search history
 // THEN I am again presented with current and future conditions for that city
 
+// Access elements
+
+var searchCityInput = $("#inputSearch");
+var searchButton = $("#searchButton");
+
 // Access OpenWeather API
 var APIkey = "3803e9deb4e4613335fd77eb16454bc1";
 
