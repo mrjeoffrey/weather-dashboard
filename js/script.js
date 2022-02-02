@@ -20,6 +20,15 @@ var searchCityInput = $("#inputSearch");
 var searchButton = $("#searchButton");
 var searchHistoryList = $("#search-history");
 
+var currentCityDate = $("#cityDate");
+var currentTemp = $("#current-temp");
+var currendWind = $("#current-wind");
+var currentHumidity = $("#current-humidity");
+var currentUVIndex = $("#current-index");
+
+// instantiate city history
+var citySearchHistory = [];
+
 // Access OpenWeather API
 var APIkey = "3803e9deb4e4613335fd77eb16454bc1";
 
