@@ -18,6 +18,7 @@
 
 var searchCityInput = $("#inputSearch");
 var searchButton = $("#searchButton");
+var searchHistoryList = $("#search-history");
 
 // Access OpenWeather API
 var APIkey = "3803e9deb4e4613335fd77eb16454bc1";
