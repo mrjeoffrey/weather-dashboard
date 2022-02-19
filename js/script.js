@@ -25,6 +25,7 @@ var currentTemp = $("#current-temp");
 var currendWind = $("#current-wind");
 var currentHumidity = $("#current-humidity");
 var currentUVIndex = $("#current-index");
+var currentDate = moment().format("L");
 
 // instantiate city history
 var citySearchHistory = [];
@@ -41,7 +42,7 @@ function currentWeatherRequest(citySearch) {
 		"&units=imperial&appid=" +
 		APIkey;
 
-	// initialize AJAX call for OneCall
+	// initialize AJAX call for OpenWeather
 	$.ajax({
 		url: queryURL,
 		method: "GET",
@@ -50,6 +51,40 @@ function currentWeatherRequest(citySearch) {
 
 		var lat = response.coord.lat;
 		var lon = response.coord.lon;
+
+		// Also grab UV index by modifying URL with lat lon
+		var UVurl =
+			"https://api.openweathermap.org/data/2.5/uvi?&lat=" +
+			lat +
+			"&lon=" +
+			lon +
+			"&appid=" +
+			APIkey;
+
+		// initialize AJAX call for UV Index
+		$.ajax({
+			url: UVurl,
+			method: "GET",
+		}).then(function (response) {
+			currentUVIndex.text(response.value);
+		});
+
+		// Grab country code
+		var countryCode = response.sys.country;
+		// Grab forecastURL
+		var forecastURL =
+			"https://api.openweathermap.org/data/2.5/forecast?&units=imperial&appid=" +
+			APIkey +
+			"&lat=" +
+			lat +
+			"&lon=" +
+			lon;
+
+		// Initialize call for 5-day forecast
+		$.ajax({
+			url: forecastURL,
+			method: "GET",
+		}).then(function (response) {});
 	});
 }
 
