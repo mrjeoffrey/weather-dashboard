@@ -122,8 +122,8 @@ function weeklyForecast(lat, lon) {
               <div class="mb-2 mt-2">
                 <h3 class="mt-1">${weatherIcon}</h3>
                 <ul class="list-unstyled">
-                  <li>Temp: ${cityInfo.temp} °F</li>
-                  <li>Humidity: ${cityInfo.humidity}\%</li>
+                  <li>Temp: <strong>${cityInfo.temp} °F</strong></li>
+                  <li>Humidity: <strong>${cityInfo.humidity}\%</strong></li>
                 </ul>
               </div>
             </div>

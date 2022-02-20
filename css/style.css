@@ -196,3 +196,15 @@ footer {
 .hide {
 	display: none;
 }
+
+.gap {
+	gap: 1rem;
+}
+
+.card {
+	margin: 0 !important;
+}
+
+#searchHistory {
+	margin-top: 1rem;
+}
