@@ -14,11 +14,9 @@
 // WHEN I click on a city in the search history
 // THEN I am again presented with current and future conditions for that city
 
-var currentDate = moment().format("L");
-
 // Access OpenWeather API
 var APIkey = "3803e9deb4e4613335fd77eb16454bc1";
-var today = moment().format("MMM Do YY");
+var today = moment().format("MMM Do YYYY");
 
 // instantiate city history
 var searchHistoryList = [];
@@ -41,7 +39,7 @@ function currentWeather(cityInput) {
 		$("#cityDetail").empty();
 
 		var iconCode = weatherResponse.weather[0].icon;
-		var iconURL = `https://openweathermap.org/img/w/${iconCode}.png`;
+		var iconURL = `https://openweathermap.org/img/wn/${iconCode}.png`;
 
 		var currentCity = $(`
 		<h4 id="cityDate" class="pb-n3">${weatherResponse.name} • ${today} <img src="${iconURL}" alt="${weatherResponse.weather[0].description}" /></h4>
@@ -77,7 +75,7 @@ function currentWeather(cityInput) {
 
 			$("#cityDetail").append(uvIndexP);
 
-			// run 5dayforcast function here to pass data
+			// run weeklyforcast function here to pass data
 			weeklyForecast(lat, lon);
 			// condition for UV index
 			if (uvIndex >= 0 && uvIndex <= 2) {
@@ -111,8 +109,8 @@ function weeklyForecast(lat, lon) {
 				humidity: forecastResponse.daily[i].humidity,
 			};
 
-			var currentDate = moment.unix(cityInfo.date).format("MMM Do YY");
-			var weatherIcon = `<img src="https://openweathermap.org/img/w/${cityInfo.icon}.png" alt="${forecastResponse.daily[i].weather[0].main}" />`;
+			var currentDate = moment.unix(cityInfo.date).format("MMM Do YYYY");
+			var weatherIcon = `<img src="https://openweathermap.org/img/wn/${cityInfo.icon}.png" alt="${forecastResponse.daily[i].weather[0].main}" />`;
 
 			var forecastCard = $(`
 		<div class="card">
