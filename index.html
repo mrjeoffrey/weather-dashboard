@@ -46,58 +46,32 @@
       <div class="col-md-3 order-md-1 mb-4">
         <form class="card p-2 mb-3">
           <div class="input-group">
-            <input id="inputSearch" type="search" class="form-control" placeholder="City or Zip Code">
+            <input id="cityInput" type="search" class="form-control" placeholder="City or Zip Code">
             <div class="input-group-append">
               <button type="submit" id="searchButton" class="btn btn-dark">Search</button>
             </div>
           </div>
         </form>
-        <ul class="list-group" id="search-history">
-          <a href="#">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <span>%City</span>
-              <strong>56</strong>
-            </li>
-          </a>
-          <a href="#">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <span>%City</span>
-              <strong>56</strong>
-            </li>
-          </a>
-          <a href="#">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <span>%City</span>
-              <strong>56</strong>
-            </li>
-          </a>
-          <a href="#">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <span>%City</span>
-              <strong>56</strong>
-            </li>
-          </a>
-          <a href="#">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <span>%City</span>
-              <strong>56</strong>
-            </li>
-          </a>
+        <ul class="list-group" id="searchHistory">
+
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <span><strong>Recent City Search</strong></span>
+          </li>
+
         </ul>
       </div>
 
       <div class="col-md-9 order-md-2">
-        <div class="card-deck mb-3">
+        <!-- weatherContent -->
+        <div id="weatherContent" class="card-deck mb-3">
 
-          <div class="card p-4">
-            <h4 id="cityDate" class="pb-n3">%CurrentCity %Date</h4>
-            <p id="current-temp">%Temp</p>
-            <p id="current-wind">%Wind</p>
-            <p id="current-humidity">%Humidity</p>
-            <p>UV-Index: <span id="current-index" class="badge badge-info p-2">%Index</span></p>
+          <div id="cityDetail" class="card p-4">
+
           </div>
         </div>
-        <div class="card-deck text-center">
+
+        <!-- 5-day forecast -->
+        <div id="fiveDayForecast" class="card-deck text-center">
           <div class="card">
             <div class="card-header bg-dark">
               <h6 class="my-0 font-weight-normal text-white">$Date</h6>
@@ -173,7 +147,7 @@
       </div>
     </div>
 
-    <footer>
+    <footer id="footer" class="">
       <p class="mt-2 mb-1 text-muted text-center"> <small>©2022 Weather Dashboard, LLC. Made with ❤️ in Irvine |
           <a class="text-danger" href="#">Privacy Policy</a> |
           <a class="text-danger" href="#">Terms of Use</a></small></p>
