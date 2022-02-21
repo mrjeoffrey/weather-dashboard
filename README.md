@@ -17,8 +17,9 @@ Clone this repo
 Open folder in VisualStudioCode and modify `index.html`
 
 ## Usage
-
-![weather dashboard desktop version 1.0](req3/Assets/dayplanner.gif)
+| Desktop | Mobile |
+| ------- | ------ |
+|![weather dashboard desktop version 1.0](./img/screenshots/weatherdashboard-desktop.gif)|![weather dashboard mobile version 1.0](./img/screenshots/weatherdashboard-mobile.gif) |
 
 ## LIVE
 | DEPLOYMENT | URL | STATUS |
